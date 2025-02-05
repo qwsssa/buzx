@@ -386,3 +386,35 @@
 .add-link-form button:hover {
     background-color: #0056b3;
 }
+/* 针对手机等小屏幕设备的样式 */
+@media screen and (max-width: 768px) {
+    /* 调整主容器布局为垂直排列 */
+    .main-container {
+        flex-direction: column;
+    }
+
+    /* 调整导航栏宽度为 100% */
+    .navigation {
+        width: 100%;
+    }
+
+    /* 调整音乐播放器的位置和大小 */
+    .music-player {
+        position: static;
+        width: 100%;
+        margin-top: 20px;
+    }
+
+    .music-player iframe {
+        width: 100%;
+    }
+
+    /* 调整帖子区域的样式 */
+    .post-section {
+        padding: 10px;
+    }
+
+    .posts li {
+        padding: 10px;
+    }
+}
