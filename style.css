@@ -1,0 +1,388 @@
+/* 大首页样式 */
+.homepage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    background-image: url('images/BJT.jpg');
+    position: relative;
+}
+
+/* 大首页添加磨砂玻璃层 */
+.homepage::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    z-index: 1;
+}
+
+.homepage h1 {
+    color: #000;
+    font-size: 3rem;
+    z-index: 2;
+}
+
+.enterButton {
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    background-color: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(10px);
+    border: none;
+    border-radius: 5px;
+    color: #000;
+    cursor: pointer;
+    z-index: 2;
+}
+
+/* 大网站样式 */
+.main-container {
+    display: flex;
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-image: url('images/BJT.jpg');
+    position: relative;
+}
+
+/* 大网站添加磨砂玻璃层 */
+.main-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    z-index: 1;
+}
+
+.navigation {
+    width: 20%;
+    background-color: rgba(200, 200, 200, 0.3);
+    backdrop-filter: blur(10px);
+    padding: 20px;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.floating-title {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+    font-size: 32px; /* 加大字号 */
+    font-weight: bold; /* 加粗文字 */
+}
+
+.floating-title span {
+    display: inline-block;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    transform-origin: center;
+}
+
+.floating-title span:nth-child(1) {
+    animation-name: float-up-down;
+    animation-delay: 0s;
+}
+
+.floating-title span:nth-child(2) {
+    animation-name: float-up-down;
+    animation-delay: 1s;
+}
+
+.floating-title span:nth-child(3) {
+    animation-name: float-up-down;
+    animation-delay: 2s;
+}
+
+@keyframes float-up-down {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.content {
+    flex: 1;
+    padding: 20px;
+    z-index: 2;
+}
+
+.post-section {
+    margin-bottom: 20px;
+}
+
+.post-section input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.post-section button {
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.posts {
+    list-style-type: none;
+    padding: 0;
+}
+
+.posts li {
+    background-color: #f9f9f9;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease-in-out;
+}
+
+.posts li:hover {
+    transform: scale(1.02);
+}
+
+.post-author {
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.post-time {
+    font-size: 0.9rem;
+    color: #999;
+    margin-bottom: 10px;
+}
+
+.post-content {
+    font-size: 1rem;
+    color: #555;
+}
+
+.post-actions {
+    margin-top: 10px;
+}
+
+.post-actions span {
+    margin-right: 10px;
+    cursor: pointer;
+    color: #007BFF;
+}
+
+.post-actions span:hover {
+    text-decoration: underline;
+}
+
+.music-player {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 2;
+}
+
+.effect-control {
+    margin-top: 10px;
+}
+
+.effect-control button {
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.effect-control select {
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* 帖子详情弹窗 */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 3;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 600px;
+    border-radius: 5px;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.post-actions {
+    margin-top: 10px;
+}
+
+.comment-section {
+    margin-top: 20px;
+}
+
+.comment-section input {
+    width: 70%;
+    padding: 10px;
+    margin-right: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.comment-section button {
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#comments {
+    list-style-type: none;
+    padding: 0;
+}
+
+#comments li {
+    background-color: #f9f9f9;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+#currentTime {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #000;
+}
+
+/* 掉落效果元素样式 */
+.effect-element {
+    position: absolute;
+    top: -50px;
+    animation-name: fall;
+    animation-duration: 5s;
+    animation-timing-function: linear;
+    font-size: 24px;
+    z-index: 999;
+}
+
+.emoji {
+    color: #FF5733;
+}
+
+.rain {
+    width: 2px;
+    height: 10px;
+    background-color: #007BFF;
+}
+
+.snow {
+    width: 10px;
+    height: 10px;
+    background-color: #FFFFFF;
+    border-radius: 50%;
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(100vh);
+        opacity: 0;
+    }
+}
+
+/* 浮动时间样式 */
+.floating-time {
+    text-align: center;
+    font-size: 18px;
+    color: #000;
+    animation: float-time 3s ease-in-out infinite alternate;
+}
+
+@keyframes float-time {
+    from {
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(-10px);
+    }
+}
+
+/* 美化添加链接表单 */
+.add-link-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.add-link-form input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+.add-link-form button {
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.add-link-form button:hover {
+    background-color: #0056b3;
+}

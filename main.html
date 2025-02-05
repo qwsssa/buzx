@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>大网站</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="main-container">
+        <div class="navigation">
+            <div class="floating-title">
+                <span>不</span>
+                <span>在</span>
+                <span>线</span>
+            </div>
+            <h2>自定义导航</h2>
+            <ul id="navLinks">
+                <!-- 导航链接将通过 JavaScript 动态添加 -->
+            </ul>
+            <!-- 美化后的添加链接区域 -->
+            <div class="add-link-form">
+                <input type="text" id="linkNameInput" placeholder="请输入网站名字">
+                <input type="text" id="linkUrlInput" placeholder="请输入网站网址">
+                <button class="addLinkButton">添加链接</button>
+            </div>
+            <div id="currentTime" class="floating-time"></div>
+        </div>
+        <div class="content">
+            <div class="post-section">
+                <input type="text" id="postInput" placeholder="发表你的帖子">
+                <button class="postButton">发帖</button>
+                <ul id="posts">
+                    <!-- 帖子将通过 JavaScript 动态添加 -->
+                </ul>
+            </div>
+        </div>
+        <div class="music-player">
+            <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=110
+                src="https://music.163.com/outchain/player?type=0&id=2326852397&auto=1&height=90"></iframe>
+            <div class="effect-control">
+                <button id="toggleEffect">切换掉落效果</button>
+                <select id="effectSelect">
+                    <option value="emoji">小表情</option>
+                    <option value="rain">下雨</option>
+                    <option value="snow">下雪</option>
+                </select>
+                <select id="frequencySelect">
+                    <option value="1000">少量</option>
+                    <option value="500">中量</option>
+                    <option value="200">大量</option>
+                </select>
+            </div>
+        </div>
+        <!-- 帖子详情弹窗 -->
+        <div id="postDetailModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2 id="postTitle"></h2>
+                <p id="postContent"></p>
+                <div class="post-actions">
+                    <span id="likeCount">0</span> <i class="like-icon">👍</i>
+                    <span id="commentCount">0</span> <i class="comment-icon">💬</i>
+                    <span id="shareCount">0</span> <i class="share-icon">🔗</i>
+                </div>
+                <div class="comment-section">
+                    <input type="text" id="commentInput" placeholder="发表评论">
+                    <button id="commentButton">评论</button>
+                    <ul id="comments">
+                        <!-- 评论将通过 JavaScript 动态添加 -->
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
